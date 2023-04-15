@@ -29,7 +29,7 @@
             const label = button.parentElement.childNodes[0];
             const id = btn.id.split("upd_")[1];
             $.ajax({
-                url: '/' + id,
+                url: '/api/products/' + id,
                 type: 'PUT',
                 success:
                     function (data) {
@@ -47,7 +47,7 @@
             const btn = button;
             const id = btn.id.split("del_")[1];
             $.ajax({
-                url: '/' + id,
+                url: '/api/products/' + id,
                 type: 'DELETE',
                 success: function () {
                     btn.parentElement.remove()
@@ -61,7 +61,7 @@
                 const label = document.getElementById("label");
                 const text = label.value;
                 $.ajax({
-                    url: '/?label=' + text,
+                    url: '/api/products/?label=' + text,
                     type: 'POST',
                     success:function (data){
                         const text = data.label;
